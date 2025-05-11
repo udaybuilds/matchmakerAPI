@@ -18,13 +18,13 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 
 
 # Copy code
-COPY ./authentication_module ./authentication_module
+COPY . .
 
 # Set working directory to the backend folder
-WORKDIR /app/authentication_module
+WORKDIR /app
 
 # Copy and install Python dependencies
-COPY ./authentication_module/requirements.txt .
+COPY ./requirements.txt .
 RUN pip install --no-cache-dir --upgrade pip
 RUN pip install --no-cache-dir -r requirements.txt
 
